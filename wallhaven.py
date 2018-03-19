@@ -11,12 +11,14 @@ from urllib.request import *
 url='https://alpha.wallhaven.cc/latest?page='
 
 
+
 def get_html(url):
     req = Request(url)
     html = urlopen(req).read()
     return html
 
-def main():
+
+def get_wallpapers():
     opener = build_opener()
     opener.addheaders = [('User-Agent', 'Mozilla/5.0')]
     install_opener(opener)
@@ -32,4 +34,9 @@ def main():
             print(image[52:], 'done')
 
 
-main()
+def main():
+    get_wallpapers()
+
+
+if __name__ == '__main__':
+    main()
